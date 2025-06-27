@@ -22,11 +22,11 @@ const VantaMesh = () => {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x9333ea,
+          color: 0x80bfff,
           backgroundColor: 0x0f172a,
-          points: 9.0,
-          maxDistance: 25.0,
-          spacing: 20.0,
+          points: 12.0,
+          maxDistance: 22.0,
+          spacing: 18.0,
         })
       );
     }
