@@ -24,9 +24,9 @@ const VantaMesh = () => {
           scaleMobile: 1.0,
           color: 0x80bfff,
           backgroundColor: 0x0f172a,
-          points: 12.0,
-          maxDistance: 22.0,
-          spacing: 18.0,
+          points: 10.0,
+          maxDistance: 25.0,
+          spacing: 20.0,
         })
       );
     }
@@ -35,7 +35,11 @@ const VantaMesh = () => {
     };
   }, [vantaEffect]);
 
-  return <div ref={vantaRef} className="absolute inset-0 z-0 h-full w-full vanta-gradient-mask" />;
+  return (
+    <div className="absolute inset-0 z-0 h-full w-full vanta-gradient-mask-bottom">
+        <div ref={vantaRef} className="h-full w-full vanta-gradient-mask-right" />
+    </div>
+    );
 };
 
 export default VantaMesh;

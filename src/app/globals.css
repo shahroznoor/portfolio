@@ -71,8 +71,13 @@
     }
   }
 
-  .vanta-gradient-mask {
-    mask-image: linear-gradient(to right, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 70%);
+  .vanta-gradient-mask-right {
+    mask-image: linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 80%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 80%);
+  }
+
+  .vanta-gradient-mask-bottom {
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
   }
 }
