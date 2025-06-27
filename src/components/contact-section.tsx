@@ -1,3 +1,4 @@
+
 'use client';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -32,7 +33,7 @@ export default function ContactSection() {
     console.log(values);
     toast({
       title: 'Message Sent!',
-      description: "Thanks for reaching out. We'll get back to you soon.",
+      description: "Thanks for reaching out. I'll get back to you soon.",
     });
     form.reset();
   }
@@ -44,20 +45,20 @@ export default function ContactSection() {
         <div className="grid gap-12 md:grid-cols-2">
             <div>
                 <p className="mb-6 text-muted-foreground">
-                    I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions. Feel free to reach out to me.
+                    I'm currently open to new opportunities and collaborations. If you have a project in mind, a question, or just want to say hi, feel free to reach out. I'll do my best to get back to you!
                 </p>
                 <div className="space-y-4">
                     <div className="flex items-center gap-4">
                         <Mail className="h-5 w-5 text-primary"/>
-                        <span className="text-sm">alex.doe@example.com</span>
+                        <a href="mailto:samantha.reyes@example.com" className="text-sm hover:text-primary">samantha.reyes@example.com</a>
                     </div>
                     <div className="flex items-center gap-4">
                         <Phone className="h-5 w-5 text-primary"/>
-                        <span className="text-sm">+1 (555) 123-4567</span>
+                        <span className="text-sm">+1 (512) 555-0123</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <MapPin className="h-5 w-5 text-primary"/>
-                        <span className="text-sm">San Francisco, CA</span>
+                        <span className="text-sm">Austin, TX</span>
                     </div>
                 </div>
             </div>

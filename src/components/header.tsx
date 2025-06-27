@@ -1,31 +1,30 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Menu } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
+interface HeaderProps {
+  profileName: string;
+}
 
 const navItems = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Our Project' },
-  { href: '#home', label: 'About us' },
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
 ];
 
-const EnverLogo = () => (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="16" cy="16" r="16" fill="url(#paint0_linear_1_2)"/>
-        <path d="M16.511 7.C16.511 7. 19.898 11.234 20.898 12.75C21.898 14.266 22.234 16.039 20.898 17.555C19.562 19.07 17.187 19.328 15.601 18.07C14.015 16.812 13.679 14.781 14.937 13.266C16.195 11.75 16.511 7. 16.511 7.Z" fill="white"/>
-        <defs>
-            <linearGradient id="paint0_linear_1_2" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#5454D4"/>
-                <stop offset="1" stopColor="#5454D4" stopOpacity="0.5"/>
-            </linearGradient>
-        </defs>
-    </svg>
-);
-
-export default function Header() {
+export default function Header({ profileName }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +35,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  const NameLogo = ({ name }: { name: string }) => {
+    const initials = name.split(' ').map(n => n[0]).join('');
+    return (
+      <div className="flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground font-bold">
+        {initials}
+      </div>
+    )
+  }
+
   return (
     <header
       className={cn(
@@ -44,9 +52,9 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
-        <a href="#home" className="flex items-center gap-3 text-2xl font-bold font-headline text-white">
-          <EnverLogo />
-          Enver
+        <a href="#home" className="flex items-center gap-3 text-xl font-bold font-headline text-white">
+          <NameLogo name={profileName} />
+          {profileName}
         </a>
         <nav className="hidden items-center space-x-8 md:flex">
           {navItems.map((item) => (
@@ -61,8 +69,36 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-2">
             <Button asChild variant="outline">
-                <a href="#contact">Contact us</a>
+                <a href="#contact">Contact Me</a>
             </Button>
+            <div className="md:hidden">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <div className="flex flex-col gap-4 p-4">
+                  <a href="#home" className="flex items-center gap-3 text-xl font-bold font-headline text-white mb-4" onClick={() => setMobileMenuOpen(false)}>
+                    <NameLogo name={profileName} />
+                    {profileName}
+                  </a>
+                  {navItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="text-lg font-medium text-foreground transition-colors hover:text-primary"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
         </div>
       </div>
     </header>
