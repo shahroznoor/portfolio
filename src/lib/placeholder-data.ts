@@ -1,6 +1,6 @@
 
 import type { ProfileData } from './types';
-import { Code, Briefcase, Mic, BarChart, Database, GitBranch, Rocket } from 'lucide-react';
+import { Code, Terminal , Computer, Server, BarChart, Database, GitBranch, Rocket } from 'lucide-react';
 
 export const profileData: ProfileData = {
   name: 'Muhammad Shahroz',
@@ -52,12 +52,12 @@ export const profileData: ProfileData = {
     { id: 1, name: 'React Js', icon: Code },
     { id: 1, name: 'Next Js', icon: Code },
     { id: 3, name: 'Go lang', icon: Code },
-    { id: 4, name: 'Cloud (AWS/GCP)', icon: Database },
-    { id: 5, name: 'Docker', icon: GitBranch },
+    { id: 4, name: 'Cloud (AWS/GCP)', icon: Server },
+    { id: 5, name: 'Docker', icon: Computer },
     { id: 3, name: 'Kubernetes', icon: Code },
     { id: 6, name: 'Git', icon: GitBranch },
     { id: 6, name: 'SVN', icon: GitBranch },
-    { id: 3, name: 'Ubuntu/Linux', icon: Code },
+    { id: 3, name: 'Ubuntu/Linux', icon: Terminal },
   ],
   projects: [
     {
