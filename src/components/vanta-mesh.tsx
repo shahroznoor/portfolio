@@ -24,9 +24,9 @@ const VantaMesh = () => {
           scaleMobile: 1.0,
           color: 0x9333ea,
           backgroundColor: 0x0f172a,
-          points: 6.0,
-          maxDistance: 30.0,
-          spacing: 35.0,
+          points: 9.0,
+          maxDistance: 25.0,
+          spacing: 20.0,
         })
       );
     }
