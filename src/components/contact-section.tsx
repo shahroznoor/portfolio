@@ -32,14 +32,14 @@ export default function ContactSection() {
     console.log(values);
     toast({
       title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      description: "Thanks for reaching out. We'll get back to you soon.",
     });
     form.reset();
   }
 
   return (
-    <section id="contact" className="bg-secondary">
-      <div className="container mx-auto max-w-5xl px-4 py-16 md:py-24">
+    <section id="contact" className="bg-background">
+      <div className="container mx-auto max-w-7xl px-4 py-16 md:py-24">
         <SectionHeading>Get In Touch</SectionHeading>
         <div className="grid gap-12 md:grid-cols-2">
             <div>
@@ -61,7 +61,7 @@ export default function ContactSection() {
                     </div>
                 </div>
             </div>
-            <Card className="shadow-lg">
+            <Card className="shadow-lg bg-card border-border">
                 <CardContent className="p-6">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
