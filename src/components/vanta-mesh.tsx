@@ -35,7 +35,7 @@ const VantaMesh = () => {
     };
   }, [vantaEffect]);
 
-  return <div ref={vantaRef} className="absolute inset-0 z-0 h-full w-full" />;
+  return <div ref={vantaRef} className="absolute inset-0 z-0 h-full w-full vanta-gradient-mask" />;
 };
 
 export default VantaMesh;

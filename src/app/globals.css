@@ -70,4 +70,9 @@
       transform: translateY(0);
     }
   }
+
+  .vanta-gradient-mask {
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 20%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 20%);
+  }
 }
